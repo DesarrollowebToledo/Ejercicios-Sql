@@ -1,4 +1,4 @@
-EjerciosMySql
+Ejercicios SQL
 =============
 
-colección de ejercicios para aprender MySQL con PHP
+Aprenderemos SQL ayudados por PHPMyAdmin
