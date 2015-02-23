@@ -61,20 +61,25 @@ Una empresa tiene registrados sus clientes en una tabla llamada "clientes",
   join provincias
   on clientes.codigoprovincia=provincias.codigo;
   
-5- Obtenemos los datos de ambas tablas, usando  alias y haciendo un join:
+5.creamos alias de clientes y de provincias
+ select * from clientes as c
+  join provincias as p
+  on c.codigoprovincia=p.codigo;
+
+6- Obtenemos los datos de ambas tablas, usando  alias y haciendo un join:
  select c.nombre,c.domicilio,c.ciudad,p.nombre,c.telefono
   from clientes as c
   join provincias as p
   on c.codigoProvincia=p.codigo;
 
-6- Obtenemos la misma información anterior pero ordenada por nombre del cliente:
+7- Obtenemos la misma información anterior pero ordenada por nombre del cliente:
  select c.nombre,c.domicilio,c.ciudad,p.nombre,c.telefono
   from clientes as c
   join provincias as p
   on c.codigoProvincia=p.codigo
   order by c.nombre;
 
-6- Omitimos la referencia a las tablas en la condición "on" para verificar que la sentencia no se 
+8- Omitimos la referencia a las tablas en la condición "on" para verificar que la sentencia no se 
 ejecuta porque el nombre del campo "codigo" es ambiguo (ambas tablas lo tienen):
  select c.nombre,c.domicilio,c.ciudad,p.nombre,c.telefono
   from clientes as c
