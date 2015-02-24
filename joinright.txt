@@ -14,28 +14,28 @@ inscripciones de los deportistas en los distintos deportes.
   primary key(dni)
  );
 
- create table inscripciones(
- dni char(8) not null, 
-  deporte varchar(15) not null,
-  año year,
-  matricula char(1), /*si se ha pagado ='s' sino 'n'*/
-  primary key(dni,deporte,año),
-  FOREIGN KEY (dni) REFERENCES deportistas(dni)
- );
+CREATE TABLE inscripciones(
+dniCHAR( 8 ) NOT NULL ,
+deporte VARCHAR( 15 ) NOT NULL ,
+año YEAR,
+matricula ENUM(  'sí',  'no' ) DEFAULT  'no',
+PRIMARY KEY ( dni, deporte, año ) ,
+FOREIGN KEY ( dni ) REFERENCES deportistas( dni )
+)
 
 3- Ingresamos algunos registros para ambas tablas:
- insert into socios values('22333253','Juan Perez','Colón 234');
- insert into socios values('23333444','Maria Lopez','Tendezuelas 465');
- insert into socios values('24333444','Antonio Juarez','Arroyo Merlin 980');
- insert into socios values('25333444','Marcelo Pereyra','Rio Marchés 49');
+ insert into socios values('11122233','Juan Perez','Colón 234');
+ insert into socios values('22233344','Maria Lopez','Tendezuelas 465');
+ insert into socios values('33344455','Antonio Juarez','Arroyo Merlin 980');
+ insert into socios values('44455566','Marcelo Pereyra','Rio Marchés 49');
 
- insert into inscripciones values ('22333444','natacion','2005','s');
- insert into inscripciones  values ('22333444','natacion','2006','n');
- insert into inscripciones   values ('23333444','natacion','2005','s');
- insert into inscripciones   values ('23333444','tenis','2006','s');
- insert into inscripciones  values ('23333444','natacion','2006','s');
- insert into inscripciones values ('24333444','tenis','2006','n');
- insert into inscripciones values ('24333444','basquet','2006','n');
+ insert into inscripciones values ('11122233','natacion','2013','si');
+ insert into inscripciones  values ('11122233','natacion','2014','no');
+ insert into inscripciones   values ('22233344','natacion','2013','si');
+ insert into inscripciones   values ('22233344','tenis','2014','no');
+ insert into inscripciones  values ('22233344','natacion','2014','si');
+ insert into inscripciones values ('33344455','tenis','2013','no');
+ insert into inscripciones values ('33344455','basket','2014','no');
  
  4. Realizamos un join normal para saber los deportistas inscritos
 
