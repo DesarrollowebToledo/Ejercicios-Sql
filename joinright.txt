@@ -38,28 +38,27 @@ FOREIGN KEY ( dni ) REFERENCES deportistas( dni )
  insert into inscripciones values ('33344455','basket','2014','no');
  
  4. Realizamos un join normal para saber los deportistas inscritos
+ select d.dni,d.nombre,i.deporte,i.año,i.matricula
+  from deportistas as d
+ join
+inscripciones as i
+  on d.dni=i.dni;
 
 5- Realizamos un "left join" de la tabla "deportistas" a "inscripciones" buscando coincidencia de "dni":
- select d.documento,d.nombre,i.deporte,i.año,i.matricula
+select d.dni,d.nombre,i.deporte,i.año,i.matricula
   from deportistas as d
-  left join inscriptos as i
-  on d.documento=i.documento;
-Notad que los deportistas que no están inscritosen ningún deporte tiene la fila como "null".
+  left join
+inscripciones as i
+  on d.dni=i.dni;
+Notemos que los deportistas que no están inscritosen ningún deporte tienen la fila como "null".
 
-5- Realice un "right join" para obtener la misma salida anterior:
- select d.documento,d.nombre,i.deporte,i.año,i.matricula
+5- Realizamos un "right join" para obtener la misma salida anterior:
+ select d.dni,d.nombre,i.deporte,i.año,i.matricula
   from inscripciones as i
-  right join deportistas as s
-  on s.documento=i.documento;
-
-6- Ingresamos una inscripción de alguien que no sea socio (documento que no se encuentre en la 
-tabla "socios"):
- insert into inscripciones values ('26333444','basquet','2006','n');
-
-7- Realizamos un "right join" desde la tabla "deportistas" a "inscripciones" buscando coincidencia de documento:
- select d.nombre,i.documento,i.deporte,i.año,i.matricula
-  from deportistas as d
-  right join inscripciones as i
-  on d.documento=i.documento;
-Notamos que la persona con documento "26333444" no se encuentra en "socios", la columna "nombre" 
-(correspondiente a la tabla "socios") contiene "null".
+  right join deportistas as d
+  on d.dni=i.dni;
+6. Queremos obtener sólamente los no inscritos:
+SELECT d.dni, d.nombre, i.deporte, i.año, i.matricula
+FROM deportistas AS d
+LEFT JOIN inscripciones AS i ON d.dni = i.dni
+WHERE i.deporte IS NULL 
