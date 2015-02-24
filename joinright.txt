@@ -1,6 +1,6 @@
-Trabajamos un poco más el join left, el join right, además con primary key de varias columnas y un foreign key.
+Trabajamos un poco más el join left, el join right, además con primary key de varias columnas y un foreign key y con is null
 
-Un club administra distintas actividades  deportivas. En una tabla llamada "deportistas" guardamos los datos personales
+Un club deportivo municipal nos ha pedido que creemos una aplicación que administre sus actividades  deportivas. En una tabla llamada "deportistas" guardamos los datos personales
 y en una tabla denominada "inscripciones" almacenamos la información necesaria para las 
 inscripciones de los deportistas en los distintos deportes.
 
@@ -57,7 +57,8 @@ Notemos que los deportistas que no están inscritosen ningún deporte tienen la 
   from inscripciones as i
   right join deportistas as d
   on d.dni=i.dni;
-6. Queremos obtener sólamente los no inscritos:
+  
+6. Queremos obtener solamente los no inscritos:
 SELECT d.dni, d.nombre, i.deporte, i.año, i.matricula
 FROM deportistas AS d
 LEFT JOIN inscripciones AS i ON d.dni = i.dni
