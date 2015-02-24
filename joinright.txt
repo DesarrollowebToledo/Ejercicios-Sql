@@ -19,7 +19,7 @@ inscripciones de los deportistas en los distintos deportes.
   deporte varchar(15) not null,
   año year,
   matricula char(1), /*si se ha pagado ='s' sino 'n'*/
-  primary key(documento,deporte,año),
+  primary key(dni,deporte,año),
   FOREIGN KEY (dni) REFERENCES deportistas(dni)
  );
 
