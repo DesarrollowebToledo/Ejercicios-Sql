@@ -1,0 +1,25 @@
+Trabajamos con la tabla "agenda" que registra la información referente a nuestros amigos.
+
+1- Eliminamos la tabla (drop table) si existe (if exists).
+
+2- Creamos la tabla con los siguientes campos: apellido (cadena de 30), nombre (cadena de 20),
+ domicilio (cadena de 30) y telefono (cadena de 11):
+ create table agenda(
+  apellido varchar(30),
+  nombre varchar(20),
+  domicilio varchar(30),
+  telefono varchar(11)
+ );
+
+3- Visualizamos la estructura de la tabla "agenda" (describe).
+
+4- Ingrese los siguientes registros (insert into):
+ Mores,Alberto,Colon 123,4234567,
+ Torres,Juan,Avellaneda 135,4458787,
+ Lopez,Mariana,Urquiza 333,4545454,
+ Lopez,Jose,Urquiza 333,4545454,
+ Peralta,Susana,Gral. Paz 1234,4123456.
+
+5- Elimine el registro cuyo nombre sea 'Juan'(delete - where).
+
+6- Elimine los registros cuyo número telefónico sea igual a '4545454'.

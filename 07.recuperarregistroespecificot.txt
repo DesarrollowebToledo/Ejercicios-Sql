@@ -1,0 +1,25 @@
+Trabajamos con nuestra tabla "agenda".
+1- Eliminamos "agenda", si existe:
+drop table if exists agenda;
+
+2- Creamos la tabla, con los siguientes campos: 
+   nombre (cadena de 20), domicilio (cadena de 30) y telefono (cadena de 11).
+
+3- Visualice la estructura de la tabla "agenda".(describe).
+
+4- Ingrese los siguientes registros:
+ 'Alberto Mores','Reconquista 55','9254234567',
+ 'Juan Torres','Río Marchés 135','9254458787',
+ 'Mariana Lopez','Avenida Boladiez 6','9254545454',
+ 'Fernando Lopez','Ruiz Quemado 4','9254545454'.
+
+5- Seleccione todos los registros de la tabla. (select).
+
+6- Seleccione el registro cuyo nombre sea 'Juan Torres'.
+
+7- Seleccione el registro cuyo domicilio sea 'Reconquista 55'.
+
+8- Muestre los datos de quienes tengan el teléfono '9254545454'.
+
+9- Elimine la tabla "agenda".
+
